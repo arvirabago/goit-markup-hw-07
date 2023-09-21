@@ -881,3 +881,18 @@ label.modal-contacts-checkbox {
   outline-color: var(--iris);
   cursor: pointer;
 }
+
+/*Mobile Setup Menu*/
+
+.mobile-menu {
+  min-width: 30px;
+  min-height: 20px;
+  padding: 0;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+  cursor: pointer;
+  outline: none;
+  border: none;
+  border-radius: 50%;
+}

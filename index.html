@@ -3,6 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
     <title>Web Studio</title>
     <link rel="stylesheet" href="./css/style.css" />
     <link rel="stylesheet" href="./css/modern-normalize.css" />
@@ -13,6 +14,7 @@
       rel="stylesheet"
     />
   </head>
+
   <body>
     <!-- Top Line -->
     <header class="header-page">
@@ -47,6 +49,17 @@
             </li>
           </ul>
         </address>
+
+        <button
+          class="menu-switch"
+          js-open-menu
+          aria-expanded="false"
+          aria-controls="mobile-menu"
+        >
+          <svg class="mobile-menu" width="32" height="22">
+            <use href="./images/icons.svg#icon-burger"></use>
+          </svg>
+        </button>
       </div>
     </header>
 
