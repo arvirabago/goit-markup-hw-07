@@ -15,6 +15,7 @@ p {
   --ocean: #404bbf;
   --lightslate: #8e8f99;
   --green: #31d0aa;
+  --cornflower: #E7E9FC;
 }
 
 body {
@@ -45,7 +46,7 @@ address {
 
 .container {
   margin: 0 auto;
-  width: 1200px;
+  width: 320px;
   padding-left: 15px;
   padding-right: 15px;
 }
@@ -224,12 +225,11 @@ img {
 .features-list {
   display: flex;
   flex-wrap: wrap;
-  gap: 30px;
+  gap: 24px;
 }
 
 .features-list-items {
   width: 264px;
-  flex-basis: calc(100% / 4 - 30px);
 }
 
 .features-title::before {
@@ -778,7 +778,7 @@ label.modal-contacts-checkbox {
 }
 
 .footer-form input {
-  width: 351px;
+  width: 342px;
   height: 40px;
   border-radius: 4px;
   border: 1px solid var(--white);
@@ -907,7 +907,7 @@ label.modal-contacts-checkbox {
   left: 0;
   width: 100%;
   height: 100%;
-  padding: 80px;
+  padding: 40px;
   background-color: #ffffff;
   box-shadow: 0px 2px 1px rgba(46, 47, 66, 0.08),
     0px 1px 1px rgba(46, 47, 66, 0.16), 0px 1px 6px rgba(46, 47, 66, 0.08);
@@ -931,7 +931,7 @@ label.modal-contacts-checkbox {
   right: 24px;
 }
 
-.mobile-close-button {
+.menu-container button {
   position: absolute;
   top: 24px;
   right: 24px;
@@ -941,11 +941,17 @@ label.modal-contacts-checkbox {
   align-items: center;
   justify-content: center;
   border-radius: 50%;
-  border: 1px solid rgba(46, 47, 66, 0.1);
+  border: none;
   background-color: var(--cornflower);
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
     border 250ms cubic-bezier(0.4, 0, 0.2, 1);
   display: flex;
+}
+
+.menu-container button:hover {
+  background-color: var(--ocean);
+  color: var(--white);
+
 }
 
 .mobile-menu-list {
@@ -970,6 +976,8 @@ label.modal-contacts-checkbox {
 
 .mobile-menu-link {
   color: var(--navyblue);
+  font-size: 36px;
+  font-weight: 700;
 }
 
 .mobile-menu-link:hover,
@@ -990,7 +998,7 @@ label.modal-contacts-checkbox {
   font-family: Roboto;
   font-size: 36px;
   font-style: normal;
-  font-weight: 700;
+  font-weight: 500;
   line-height: 1.11; /* 111.111% */
   letter-spacing: 0.72px;
 }
@@ -1000,6 +1008,7 @@ label.modal-contacts-checkbox {
   color: var(--iris);
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
+
 .font-size-adjustment {
   font-size: 20px;
 }
@@ -1033,6 +1042,23 @@ label.modal-contacts-checkbox {
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+.menu-switch {
+  min-width: 40px;
+  min-height: 40px;
+  padding: 0;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+  cursor: pointer;
+  outline: none;
+  border: none;
+  border-radius: 50%;
+}
+
+.menu-container.is-open {
+  transform: translateX(0);
+}
+
 /*Media Setup*/
 
 @media only screen and (min-width: 428px) and (max-width: 767px) {
@@ -1049,6 +1075,7 @@ label.modal-contacts-checkbox {
   }
 }
 
+/* Desktop */
 @media only screen and (min-width: 1158px) {
   .container {
     width: 1200px;
@@ -1062,242 +1089,231 @@ label.modal-contacts-checkbox {
     padding: 96px 0;
   }
 }
-.header-container {
-  display: flex;
-  gap: 24px;
-  margin: 0 auto;
+
+@media only screen and (min-width: 768px) {
+  .menu-switch {
+    display: none;
+  }
 }
 
-.navigation-list {
-  padding: 0;
+/* Tablet View */
+@media only screen and (min-width: 768px) and (max-width: 1157px) {
+  /* Insert Classes*/
+
+  .header-container {
+    display: flex;
+    gap: 24px;
+    margin: 0 auto;
+  }
+
+  .navigation-list {
+    padding: 0;
+    margin-left: 50px;
+    gap: 40px;
+  }
+
+  .contacts-item {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .contacts-item a {
+    font-size: 12px;
+  }
+
+  .features-list {
+    width: 100%;
+    min-height: 120px;
+    gap: 72px 147px;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    padding: 0;
+  }
+
+  .features-title {
+    text-align: start;
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 1.1;
+    letter-spacing: 0.02em;
+    margin-bottom: 8px;
+  }
+
+  .features-text {
+    width: 345px;
+  }
+
+  .feature-items {
+    width: 358px;
+  }
+
+  .features-title.antenna::before,
+  .features-title.clock::before,
+  .features-title.diagram::before,
+  .features-title.astronaut::before,
+  .section-three {
+    display: none;
+  }
+
+  .section-three {
+    display: none;
+  }
+
+  .team-items {
+    justify-content: center;
+  }
+
+  .clients-list {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    gap: 72px 24px;
+  }
+
+  .footer-division {
+    width: 100%;
+    gap: 72px 24px;
+    margin: 0 auto;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .subscribe-line {
+    margin: 0;
+  }
+
+  .products {
+    row-gap: 72px;
+    column-gap: 24px;
+    flex-wrap: wrap;
+    flex-direction: row;
+    display: flex;
+  }
+
+  .products > .product-item {
+    margin: 0;
+  }
 }
 
-.contacts-item {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
-}
-
-.contacts-item a {
-  font-size: 12px;
-}
-
-.features-list {
-  width: 100%;
-  min-height: 120px;
-  gap: 72px 24px;
-  display: flex;
-  flex-wrap: wrap;
-  margin: 0 auto;
-}
-
-.features-title {
-  text-align: start;
-  font-weight: 700;
-  font-size: 36px;
-  line-height: 1.1;
-  letter-spacing: 0.02em;
-  margin-bottom: 8px;
-}
-
-.feature-items {
-  width: 358px;
-}
-
-.features-title.antenna::before,
-.features-title.clock::before,
-.features-title.diagram::before,
-.features-title.astronaut::before,
-.section-three {
-  display: none;
-}
-
-.section-three {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  gap: 22px 0;
-  width: 100%;
-}
-
-.clients-list {
-  display: flex;
-  flex-wrap: wrap;
-  width: 100%;
-  justify-content: center;
-  align-items: center;
-  gap: 72px 24px;
-}
-
-.footer-division {
-  width: 100%;
-  gap: 72px 24px;
-  margin: 0 auto;
-  align-items: center;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-
-.subscribe-line {
-  margin: 0;
-}
-
-.products {
-  row-gap: 72px;
-  column-gap: 24px;
-  flex-wrap: wrap;
-  flex-direction: row;
-  display: flex;
-}
-
-.products > .product-item {
-  margin: 0;
-}
-
+/* Mobile View */
 @media only screen and (min-width: 428px) and (max-width: 767px),
   only screen and (max-width: 427px) {
+
+  /* Insert Classes*/
   .navigation-list,
   .contacts-item {
     display: none;
   }
-}
 
-.header-container {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  height: 60px;
-}
+  .header-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 60px;
+  }
 
-.section-one h1 {
-  display: block;
-  max-width: 320px;
-  font-weight: 700;
-  font-size: 36px;
-  line-height: 1.11;
-  letter-spacing: 0.02em;
-  text-align: center;
-  margin: 0 auto 72px;
-}
+  .title-section-one {
+    font-size: 36px;
+  }
 
-.features-title.antenna::before,
-.features-title.clock::before,
-.features-title.diagram::before,
-.features-title.astronaut::before,
-.section-three {
-  display: none;
-}
+  .features-title {
+    max-width: 320px;
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 1.11;
+    letter-spacing: 0.02em;
+    text-align: center;
+    margin: 8px auto;
+  }
 
-.features-list {
-  width: 100%;
-  min-height: 120px;
-  gap: 72px 24px;
-  display: flex;
-  flex-wrap: wrap;
-  margin: 0 auto;
-}
+  .features-list {
+    padding: 0;
+  }
 
-.features-title {
-  text-align: center;
-  font-weight: 700;
-  font-size: 36px;
-  line-height: 1.1;
-  letter-spacing: 0.02em;
-  margin-bottom: 8px;
-}
+   .features-list-items,
+   .features-text {
+    width: 100%;
+  }
 
-.team-items {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  gap: 72px;
-}
-
-.clients-list {
-  display: flex;
-  flex-wrap: wrap;
-  width: 100%;
-  justify-content: center;
-  align-items: center;
-  gap: 72px 24px;
-}
-
-.footer-division {
-  display: flex;
-  gap: 72px;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-
-.footer-description {
-  margin: 0 auto;
-  padding-top: 0;
-  display: inline-block;
-  text-align: center;
-}
-
-.footer-description p {
-  text-align: start;
-}
-
-.social-media {
-  margin: 0 auto;
-}
-
-.social-media-title {
-  text-align: center;
-}
-
-.subscribe-line {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  margin: 0 auto;
-}
-
-.subscribe-line-title {
-  margin: 0 auto;
-}
-
-.footer-form {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  gap: 16px;
-}
-
-.modal {
-  width: 390px;
-  height: 622px;
-}
-
-.filter-buttons {
-  display: flex;
-  width: 100%;
-  gap: 16px 24px;
-  flex-wrap: wrap;
-  justify-content: flex-start;
-  padding-top: 48px;
-}
-
-.button-filter {
-  margin-bottom: 0;
-  margin-top: 0;
-}
-
-.product {
-  justify-content: center;
-}
-
-@media only screen and (min-width: 768px) {
-  .menu-toggle {
+    
+  .features-title.antenna::before,
+  .features-title.clock::before,
+  .features-title.diagram::before,
+  .features-title.astronaut::before,
+  .section-three {
     display: none;
   }
+
+  .team-items {
+    justify-content: center;
+    gap: 72px;
+  }
+
+  .clients-list {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 72px 16px;
+  }
+
+  .footer-division {
+    flex-direction: column;
+    align-items: center;
+    margin: 0 auto;
+    gap: 72px;
+  }
+
+  .footer-description,
+  .social-media-title,
+  .subscribe-line-title {
+    text-align: center;
+  }
+
+  .footer-description p {
+    text-align: left;
+  }
+
+  .social-media {
+    margin: 0;
+  }
+
+  .footer-form,
+  .subscribe-line
+  {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 16px;
+    margin: 0;
+  }
+
+  .logo-span {
+    text-align: center;
+    margin: 0;
+  }
+
+  .modal {
+    width: 333px;
+  }
+
+  .filter {
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    width: 300px;
+    gap: 0px 24px;
+  }
+
+  .filter-button + .filter-button {
+    margin: 0;
+  }
+
+  .products {
+    justify-content: center;
+  }
 }
-
-
