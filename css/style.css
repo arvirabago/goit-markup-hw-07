@@ -15,7 +15,7 @@ p {
   --ocean: #404bbf;
   --lightslate: #8e8f99;
   --green: #31d0aa;
-  --cornflower: #E7E9FC;
+  --cornflower: #e7e9fc;
 }
 
 body {
@@ -951,7 +951,6 @@ label.modal-contacts-checkbox {
 .menu-container button:hover {
   background-color: var(--ocean);
   color: var(--white);
-
 }
 
 .mobile-menu-list {
@@ -1204,7 +1203,6 @@ label.modal-contacts-checkbox {
 /* Mobile View */
 @media only screen and (min-width: 428px) and (max-width: 767px),
   only screen and (max-width: 427px) {
-
   /* Insert Classes*/
   .navigation-list,
   .contacts-item {
@@ -1236,12 +1234,11 @@ label.modal-contacts-checkbox {
     padding: 0;
   }
 
-   .features-list-items,
-   .features-text {
+  .features-list-items,
+  .features-text {
     width: 100%;
   }
 
-    
   .features-title.antenna::before,
   .features-title.clock::before,
   .features-title.diagram::before,
@@ -1283,8 +1280,7 @@ label.modal-contacts-checkbox {
   }
 
   .footer-form,
-  .subscribe-line
-  {
+  .subscribe-line {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -1315,5 +1311,63 @@ label.modal-contacts-checkbox {
 
   .products {
     justify-content: center;
+  }
+}
+
+@media (min-device-pixel-ratio: 2),
+  (min-resolution: 192dpi),
+  (min-resolution: 2dppx) {
+  .hero-section {
+    background-image: linear-gradient(
+        rgba(46, 47, 66, 0.7),
+        rgba(46, 47, 66, 0.7)
+      ),
+      url(../images/header-responsive/people-office-mob-@2x.jpg);
+  }
+}
+
+@media only screen and (min-width: 429px) and (max-width: 768px) {
+  .hero-section {
+    max-width: 768px;
+    background-image: linear-gradient(
+        rgba(46, 47, 66, 0.7),
+        rgba(46, 47, 66, 0.7)
+      ),
+      url(../images/header-responsive/people-office-tab-@1x.jpg);
+  }
+
+  @media (min-device-pixel-ratio: 2),
+    (min-resolution: 192dpi),
+    (min-resolution: 2dppx) {
+    .hero-section {
+      background-image: linear-gradient(
+          rgba(46, 47, 66, 0.7),
+          rgba(46, 47, 66, 0.7)
+        ),
+        url(../images/header-responsive/people-office-tab-@2x.jpg);
+    }
+  }
+}
+
+@media only screen and (max-width: 769px) {
+  .hero-section {
+    max-width: 1158px;
+    background-image: linear-gradient(
+        rgba(46, 47, 66, 0.7),
+        rgba(46, 47, 66, 0.7)
+      ),
+      url(../images/header-responsive/people-office-@1x.jpg);
+  }
+
+  @media (min-device-pixel-ratio: 2),
+    (min-resolution: 192dpi),
+    (min-resolution: 2dppx) {
+    .hero-section {
+      background-image: linear-gradient(
+          rgba(46, 47, 66, 0.7),
+          rgba(46, 47, 66, 0.7)
+        ),
+        url(../images/header-responsive/people-office-@2x.jpg);
+    }
   }
 }
